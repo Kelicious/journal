@@ -4,6 +4,7 @@ Journal.Views.EntryDetailView = Backbone.View.extend({
     "dblclick div.body": "updateBody",
     "focusout input[name=entry\\[title\\]]": "submitTitle",
     "focusout textarea[name=entry\\[body\\]]": "submitBody",
+    "keypress div.title > .edit": "submitTitleOnEnter",
   },
 
   render: function () {
@@ -49,5 +50,13 @@ Journal.Views.EntryDetailView = Backbone.View.extend({
 
     $("div.body > p").text(that.model.get("body"));
     $("div.body").children().addClass("view").removeClass("edit");
+  },
+
+  submitTitleOnEnter: function(e) {
+    var that = this;
+
+    if (e.keyCode == 13) {
+      that.submitTitle();
+    }
   }
 });
