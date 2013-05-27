@@ -1,4 +1,5 @@
 <div class="created"><%= new Date(Date.parse(entry.get("created_at"))) %></div>
+<div>Starred: <%= entry.escape("starred") %></div>
 <div class="title">
   <h2 class="view"><%= entry.escape("title") %></h2>
   <input name="entry[title]" class="view" value="<%= entry.escape("title") %>">
