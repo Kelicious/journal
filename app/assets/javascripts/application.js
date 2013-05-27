@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
 //= require backbone-rails
 //= require journal
 //= require_tree ./models

@@ -1,7 +1,13 @@
-<h2 class="title"><%= entry.escape("title") %></h2>
+<div class="title">
+  <h2 class="view"><%= entry.escape("title") %></h2>
+  <input name="entry[title]" class="view" value="<%= entry.escape("title") %>">
+</div>
 
-<p class="body">
-  <%= entry.escape("body") %>
-</p>
+<div class="body">
+  <p class="view">
+    <%= entry.escape("body") %>
+  </p>
+  <textarea rows="10" name="entry[body]" class="view" ><%=entry.get("body") %></textarea>
+</div>
 
-<a href="#/">Main</a>
+<a href="#/">Home</a>

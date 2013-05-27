@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
 body > div {
   padding: 20px;
 }
@@ -7,6 +12,80 @@ body > div {
   padding: 0;
 }
 
-.appTitle {
+.appTitle a {
   margin-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+#header {
+  background-color: red;
+  margin-top: 0;
+  padding: 0;
+}
+
+#header h1 {
+  margin: 0;
+}
+
+#sidebar {
+  margin: 0;
+  padding: 0;
+  max-width: 140px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#newEntry {
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: #cccccc;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 100px;
+  a {
+    display: block;
+    width: 90px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+div.title > h2.edit {
+  display: none;
+}
+
+div.title > h2.view {
+  display: block;
+}
+
+div.title > input.edit {
+  display: block;
+}
+
+div.title > input.view {
+  display: none;
+}
+
+div.body > p.edit {
+  display: none;
+}
+
+div.body > p.view {
+  display: block;
+}
+
+div.body > textarea.edit {
+  display: block;
+}
+
+div.body > textarea.view {
+  display: none;
 }

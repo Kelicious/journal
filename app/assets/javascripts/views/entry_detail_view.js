@@ -1,7 +1,7 @@
 Journal.Views.EntryDetailView = Backbone.View.extend({
   events: {
-    "dblclick h2.title": "updateTitle",
-    "dblclick p.body": "updateBody",
+    "dblclick div.title": "updateTitle",
+    "dblclick div.body": "updateBody",
     "focusout input[name=entry\\[title\\]]": "submitTitle",
     "focusout textarea[name=entry\\[body\\]]": "submitBody",
   },
@@ -20,10 +20,8 @@ Journal.Views.EntryDetailView = Backbone.View.extend({
   updateTitle: function () {
     var that = this;
 
-    that.$title = that.$el.find("h2.title");
-    that.$titleInput = $("<input name=\"entry[title]\">");
-    that.$titleInput.val(that.$title.text());
-    that.$title.replaceWith(that.$titleInput);
+    $("div.title").children().addClass("edit").removeClass("view");
+    $("div.title > input").focus();
   },
 
   submitTitle: function () {
@@ -32,17 +30,15 @@ Journal.Views.EntryDetailView = Backbone.View.extend({
     that.model.set({title: $("input[name=entry\\[title\\]]").val()});
     that.model.save();
 
-    that.$title.text(that.$titleInput.val());
-    that.$titleInput.replaceWith(that.$title);
+    $("div.title > h2").text(that.model.get("title"));
+    $("div.title").children().addClass("view").removeClass("edit");
   },
 
   updateBody: function () {
     var that = this;
 
-    that.$body = that.$el.find("p.body");
-    that.$bodyTextarea = $("<textarea name=\"entry[body]\"></textarea>");
-    that.$bodyTextarea.val(that.$body.text());
-    that.$body.replaceWith(that.$bodyTextarea);
+    $("div.body").children().addClass("edit").removeClass("view");
+    $("div.body > textarea").focus();
   },
 
   submitBody: function () {
@@ -51,7 +47,7 @@ Journal.Views.EntryDetailView = Backbone.View.extend({
     that.model.set({body: $("textarea[name=entry\\[body\\]]").val()});
     that.model.save();
 
-    that.$body.text(that.$bodyTextarea.val());
-    that.$bodyTextarea.replaceWith(that.$body);
+    $("div.body > p").text(that.model.get("body"));
+    $("div.body").children().addClass("view").removeClass("edit");
   }
 });
