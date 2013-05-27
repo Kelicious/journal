@@ -1,0 +1,10 @@
+<script type="text/javascript">
+  $(function() {
+    var entries = <%= @entries.to_json.html_safe %>;
+
+    window.Journal.initialize(
+      $("body")[0],
+      entries
+    );
+  });
+</script>
