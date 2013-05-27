@@ -21,6 +21,12 @@ class EntriesController < ApplicationController
   end
 
   def update
+    @entry = Entry.find(params[:id])
 
+    if @entry.update_attributes(params[:entry])
+      render :json => @entry
+    else
+      render :json => @entry.errors, :status => 422
+    end
   end
 end

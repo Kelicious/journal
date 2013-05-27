@@ -13,11 +13,7 @@ Journal.Routers.EntriesRouter = Backbone.Router.extend({
   index: function () {
     var that = this;
 
-    var entriesListView = new Journal.Views.EntriesListView({
-      collection: that.entries
-    });
-
-    that.$rootEl.html(entriesListView.render().$el);
+    that.$rootEl.empty();
   },
 
   new: function () {

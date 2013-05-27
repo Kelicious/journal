@@ -4,10 +4,22 @@ window.Journal = {
   Views: {},
   Routers: {},
 
-  initialize: function(rootEl, entriesData) {
+  initialize: function($sidebar, $content, entriesData) {
     var entries = new Journal.Collections.Entries(entriesData);
 
-    new Journal.Routers.EntriesRouter(rootEl, entries);
+    this.installSidebar($sidebar, entries);
+
+    new Journal.Routers.EntriesRouter($content, entries);
     Backbone.history.start();
+  },
+
+  installSidebar: function ($sidebar, entries) {
+    var that = this;
+
+    var entriesListView = new Journal.Views.EntriesListView({
+      collection: entries
+    });
+
+    $sidebar.html(entriesListView.render().$el);
   }
 };
