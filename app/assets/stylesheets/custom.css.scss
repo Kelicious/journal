@@ -46,15 +46,18 @@ a {
 #newEntry {
   margin-top: 10px;
   margin-left: 10px;
-  background-color: #cccccc;
+  background-color: #3ca9d0;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  width: 100px;
+  width: 95px;
+	height: 25px;
   a {
+		color: white;
     display: block;
     width: 90px;
     margin: auto;
     text-align: center;
+		line-height: 25px;
   }
 }
 
