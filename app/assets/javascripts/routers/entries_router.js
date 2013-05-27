@@ -13,7 +13,9 @@ Journal.Routers.EntriesRouter = Backbone.Router.extend({
   index: function () {
     var that = this;
 
-    that.$rootEl.empty();
+    var newIndexView = new Journal.Views.IndexView({});
+
+    that.$rootEl.html(newIndexView.render().$el);
   },
 
   new: function () {
