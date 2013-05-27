@@ -31,16 +31,37 @@ body > div {
 #sidebar {
   margin: 0;
   padding: 0;
-  max-width: 140px;
+  max-width: 20%;
 }
 
 #sidebar ul {
   list-style: none;
   padding-left: 10px;
+	text-align: center;
+}
+
+#archive {
+  line-height: 25px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 95px;
+	height: 25px;
+	color: #1eb486;
+	font-weight: bold;
 }
 
 a {
   text-decoration: none;
+}
+
+#content {
+	max-width: 80%;
+	padding-top: 10px;
+}
+
+.created {
+	font-size: 13px;
+	margin-bottom: 10px;
 }
 
 #newEntry {

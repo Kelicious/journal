@@ -1,7 +1,9 @@
 <div id="newEntry">
-  <a href="#entries/new">New Entry</a>
+  <a href="#entries/new">Add Post</a>
 </div>
 <ul class="nav">
+	<li id="archive">Archive</li>
+	<hr>
   <% entries.each(function (entry) { %>
     <li class="entry">
       <a href="#/entries/<%= entry.escape("id") %>">
